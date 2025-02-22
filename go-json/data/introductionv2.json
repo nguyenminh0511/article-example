@@ -1,0 +1,23 @@
+{
+    "name": "Minh",
+    "age": 29,
+    "role": "Solution Architecture",
+    "favourite_language": "Golang",
+    "favourite_languages": [
+        "Golang", "Python", "Javascript", "Java"
+    ],
+    "company": {
+        "name": "Company X",
+        "address": "Silicon Valley"
+    },
+    "projects": [
+        {
+            "id": 1,
+            "name": "Project 1"
+        },
+        {
+            "id": 2,
+            "name": "Project 2"
+        }
+    ]
+}
