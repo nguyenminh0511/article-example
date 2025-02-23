@@ -27,6 +27,6 @@ func main() {
 	// In dữ liệu ra màn hình
 	fmt.Println("Tôi quên mất nội dung file rồi, hãy ghi ra cho tôi nhé!")
 	for k, v := range unknownKeyValueData {
-		fmt.Printf("Key là %s, nội dung: %v\n", k, v)
+		fmt.Printf("- %s: %v\n", k, v)
 	}
 }
