@@ -10,49 +10,53 @@ import (
 type UserAge int
 
 func (a UserAge) IsZero() bool {
-	return a < 0 || a >= 150
+	return a > 150
 }
 
 type UserRelationship struct {
-	Name   string `json:"Name"`
+	Name   string `json:"name"`
 	UserId int    `json:"user_id"`
 }
 
 type UserInfo struct {
-	Id        int                `json:"id"`
-	Name      string             `json:"name,omitempty"`
-	Age       UserAge            `json:"age,omitempty,omitzero"`
-	Username  string             `json:"username"`
-	Password  string             `json:"password"`
-	Lover     UserRelationship   `json:"lover,omitzero"`
-	Friends   []UserRelationship `json:"friends,omitempty"`
-	CreatedAt time.Time          `json:"created_at,omitzero"`
+	Id        int              `json:"id"`
+	Name      string           `json:"name"`
+	Age       UserAge          `json:"age,omitzero"`
+	Username  string           `json:"username"`
+	Password  string           `json:"-"`
+	Height    int              `json:"height,omitempty"`
+	Weight    int              `json:"weight,omitempty"`
+	Lover     UserRelationship `json:"lover,omitzero"`
+	CreatedAt time.Time        `json:"created_at,omitzero"`
 }
 
 func main() {
-	userData := UserInfo{
+	userData1 := UserInfo{
 		Id:       1,
 		Name:     "Tuấn",
-		Age:      24,
+		Age:      25,
 		Username: "tuan_nguyen@gmail.com",
 		Password: "tuanpassword",
+		Height:   170,
+		Weight:   71,
 		Lover: UserRelationship{
 			Name:   "Hoa",
 			UserId: 5,
 		},
-		Friends: []UserRelationship{
-			{
-				Name:   "Hoàng",
-				UserId: 6,
-			},
-			{
-				Name: "Trung",
-				UserId: 7,
-			},
-		},
+		CreatedAt: time.Now(),
 	}
 
-	byteData, err := json.MarshalIndent(userData, "", "    ")
+	userData2 := UserInfo{
+		Id:       2,
+		Name:     "Minh",
+		Age:      25,
+		Username: "minh_nguyen@gmail.com",
+		Password: "minhpassword",
+	}
+
+	users := []UserInfo{userData1, userData2}
+
+	byteData, err := json.MarshalIndent(users, "", "    ")
 	if err != nil {
 		fmt.Println("Error marshal data", err)
 		return

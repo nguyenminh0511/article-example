@@ -1,21 +1,21 @@
-{
-    "id": 1,
-    "name": "Tuấn",
-    "age": 24,
-    "username": "tuan_nguyen@gmail.com",
-    "password": "tuanpassword",
-    "lover": {
-        "Name": "Hoa",
-        "user_id": 5
-    },
-    "friends": [
-        {
-            "Name": "Hoàng",
-            "user_id": 6
+[
+    {
+        "id": 1,
+        "name": "Tuấn",
+        "age": 25,
+        "username": "tuan_nguyen@gmail.com",
+        "height": 170,
+        "weight": 71,
+        "lover": {
+            "name": "Hoa",
+            "user_id": 5
         },
-        {
-            "Name": "Trung",
-            "user_id": 7
-        }
-    ]
-}
+        "created_at": "2025-03-04T02:35:06.278115959+07:00"
+    },
+    {
+        "id": 2,
+        "name": "Minh",
+        "age": 25,
+        "username": "minh_nguyen@gmail.com"
+    }
+]
